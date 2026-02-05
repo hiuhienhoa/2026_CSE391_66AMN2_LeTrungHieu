@@ -2,237 +2,213 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Employee Form</title>
+<title>employee form</title>
 <style>
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f5f5f5;
-    margin:0;
-    padding:20px;
+    font-family: arial, sans-serif;
+    background:#eee;
 }
-.form-box{
-    max-width:720px;
+.form{
+    width:700px;
     margin:20px auto;
     background:#fff;
-    padding:18px;
+    padding:20px;
     border:1px solid #ccc;
-    box-shadow:0 1px 3px rgba(0,0,0,.05);
 }
 h3{
-    margin:10px 0 8px;
-    font-size:15px;
-    border-bottom:1px solid #ccc;
-    padding-bottom:6px;
+    border-bottom:1px solid #999;
+    padding-bottom:5px;
 }
-label{
-    display:block;
-    font-size:13px;
-    margin-top:10px;
-}
-input[type="text"],
-input[type="email"],
-input[type="datetime-local"],
-select,
-textarea{
-    width:100%;
-    padding:8px;
-    margin-top:6px;
-    box-sizing:border-box;
-    border:1px solid #bbb;
-    border-radius:3px;
-    font-size:13px;
-}
-
-/* Bỏ khung (border) cho Employee ID và Last Name */
-#empId,
-#lastName {
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    outline: none;
-    padding-left: 0;
-}
-
-.inline{
+.row{
     display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-    margin-top:6px;
+    margin-bottom:8px;
 }
-.form-row{
-    display:flex;
-    gap:100px;
-    align-items:center;
-    margin-top:6px;
-}
-.form-row .field{
-    flex:1;
-    min-width:0;
-    display:flex;
-    gap:8px;
-    align-items:center;
-}
-.form-row .field label{
-    margin-top:0;
-    min-width:80px;
+.row label{
+    width:180px;
     font-weight:bold;
 }
-.form-row .field input,
-.form-row .field select{
+.row input,
+.row select,
+.row textarea{
     flex:1;
-    margin-top:0;
+    padding:5px;
 }
-.text-value{
-    font-size:13px;
-    padding:0;
-    margin-top:0;
-}
-.inline label{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    margin:0;
-    font-size:13px;
+.gender input{
+    margin-right:5px;
 }
 textarea{
-    min-height:110px;
-    resize:vertical;
+    height:120px;
 }
 .actions{
-    margin-top:12px;
     text-align:right;
+    margin-top:15px;
 }
-button{
-    padding:8px 12px;
-    margin-left:8px;
-    border:1px solid #888;
-    background:#eee;
+.actions button{
+    padding:6px 12px;
+}
+.row select{
+    flex: none;
+    width:140px;
+    height:36px;
+    border-radius:18px;
+}
+.gender{
+    align-items:flex-start;
+}
+
+.gender div{
+    display:block;
+}
+
+.gender div label{
+    display:block;
+}
+.gender div label{
+    font-weight: normal;
+}
+.captcha{
+    align-items:flex-start;
+}
+
+.captcha-text{
+    font-family: monospace;
+    letter-spacing:3px;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.captcha small{
+    display:block;
+    margin-bottom:5px;
     cursor:pointer;
-    border-radius:3px;
 }
-button[type="submit"]{
-    background:#2b87d4;
-    color:#fff;
-    border-color:#1f6fb0;
-}
-fieldset{
-    border:0;
-    padding:0;
-    margin:0;
-}
-.small{
-    font-size:12px;
-    color:#666;
-    margin-top:6px;
-}
+
 </style>
 </head>
 <body>
 
-<div class="form-box">
-<form action="#" method="post" autocomplete="on" novalidate>
+<div class="form">
+
 <h3>Basic Info</h3>
 
-<div class="form-row">
-    <div class="field">
-        <label>Employee ID</label>
-        <div class="text-value">9</div>
+<div class="row">
+    <label>Employee Id</label>
+    <span>9</span>
+</div>
+
+<div class="row">
+    <label>Last Name</label>
+    <span>Dodsworth</span>
+</div>
+
+<div class="row">
+    <label>First Name</label>
+    <input type="text" value="Anne">
+</div>
+
+<div class="row gender">
+    <label>Gender</label>
+    <div>
+        <label><input type="radio" name="g"> Male</label>
+        <label><input type="radio" name="g"> Female</label>
+        <label><input type="radio" name="g"> Xxx</label>
+        <label><input type="radio" name="g" checked> Zzz</label>
     </div>
 </div>
 
-<div class="form-row">
-    <div class="field">
-        <label>Last Name</label>
-        <div class="text-value">Dodsworth</div>
-    </div>
+<div class="row">
+    <label>Title</label>
+    <input type="text" value="Sales Representative">
 </div>
 
-<label for="firstName">First Name</label>
-<input id="firstName" name="firstName" type="text" value="Anne">
-
-<label>Gender</label>
-<div class="inline" role="radiogroup" aria-label="Gender">
-    <label><input type="radio" name="gender" value="male"> Male</label>
-    <label><input type="radio" name="gender" value="female" checked> Female</label>
-    <label><input type="radio" name="gender" value="xxx"> XXX</label>
-    <label><input type="radio" name="gender" value="zzz"> ZZZ</label>
+<div class="row">
+    <label>Suffix</label>
+    <input type="text" value="Ms.">
 </div>
 
-<table cellpadding="0" style="width:100%; margin-top:2px; border-collapse:collapse;">
-<tr>
-    <td style="border:none; padding:0px; padding-right:2px; white-space:nowrap;"><strong>Title</strong></td>
-    <td style="border:none; padding:0px; width:100%;"><input type="text" value="Sales Representative" style="width:100%; box-sizing:border-box;"></td>
-</tr>
-<tr>
-    <td style="border:none; padding:0px; padding-right:2px; white-space:nowrap;"><strong>Suffix</strong></td>
-    <td style="border:none; padding:0px; width:100%;"><input type="text" value="Ms." style="width:100%; box-sizing:border-box;"></td>
-</tr>
-<tr>
-    <td style="border:none; padding:0px; padding-right:2px; white-space:nowrap;"><strong>Birthdate</strong></td>
-    <td style="border:none; padding:0px; width:100%;"><input type="text" value="1969-07-02 00:00:00" style="width:100%; box-sizing:border-box;"></td>
-</tr>
-<tr>
-    <td style="border:none; padding:0px; padding-right:2px; white-space:nowrap;"><strong>Hiredate</strong></td>
-    <td style="border:none; padding:0px; width:100%;"><input type="text" value="1994-11-15 00:00:00" style="width:100%; box-sizing:border-box;"></td>
-</tr>
-<tr>
-    <td style="border:none; padding:0px; padding-right:2px; white-space:nowrap;"><strong>SSN # (if applicable)</strong></td>
-    <td style="border:none; padding:0px; width:100%;"><input type="text" style="width:100%; box-sizing:border-box;"></td>
-</tr>
-<tr>
-    <td style="border:none; padding:0px; padding-right:2px; white-space:nowrap;"><strong>Reports To</strong></td>
-    <td style="border:none; padding:0px; width:100%;">
-        <select style="width:100%; box-sizing:border-box;">
-            <option selected>Buchanan</option>
-        </select>
-    </td>
-</tr>
-</table>
+<div class="row">
+    <label>Birthdate</label>
+    <input type="text" value="1969-07-02 00:00:00">
+</div>
+
+<div class="row">
+    <label>Hiredate</label>
+    <input type="text" value="1994-11-15 00:00:00">
+</div>
+
+<div class="row">
+    <label>Reports To</label>
+    <select>
+        <option>Buchanan</option>
+    </select>
+</div>
 
 <h3>Contact Info</h3>
 
-<label for="email">Email</label>
-<input id="email" name="email" type="email" value="name@example.com">
+<div class="row">
+    <label>Email</label>
+    <input type="email" placeholder="Name@example.com">
+</div>
 
-<label for="address">Address</label>
-<input id="address" name="address" type="text" value="7 Houndstooth Rd.">
+<div class="row">
+    <label>Address</label>
+    <input type="text" value="7 Houndstooth Rd.">
+</div>
 
-<label for="city">City</label>
-<input id="city" name="city" type="text" value="London">
+<div class="row">
+    <label>City</label>
+    <input type="text" value="London">
+</div>
 
-<label for="postal">Postal Code</label>
-<input id="postal" name="postalCode" type="text" value="WG2 7LT">
+<div class="row">
+    <label>Postal Code</label>
+    <input type="text" value="Wg2 7lt">
+</div>
 
-<label for="country">Country</label>
-<select id="country" name="country">
-    <option value="russian_federation" selected>Russian Federation</option>
-</select>
-
-<label for="phone">US Home Phone</label>
-<input id="phone" name="phone" type="text" value="(234)234-2342">
+<div class="row">
+    <label>Country</label>
+    <select>
+        <option>Russian Federation</option>
+    </select>
+</div>
 
 <h3>Optional Info</h3>
 
-<label for="notes">Notes</label>
-<textarea id="notes" name="notes">Anne has a BA degree in English from St. Lawrence College.
-She is fluent in French and German.ZZZ</textarea>
-
-<label>Preferred Shift</label>
-<div class="inline" role="radiogroup" aria-label="Preferred Shift">
-    <label><input type="radio" name="shift" value="regular"> Regular</label>
-    <label><input type="radio" name="shift" value="graveyard" checked> Grave Yard</label>
+<div class="row">
+    <label>Notes</label>
+    <textarea>
+Anne Has A BA Degree In English From St. Lawrence College.
+She Is Fluent In French And German.
+    </textarea>
 </div>
 
-<label class="inline"><input type="checkbox" name="active" checked> Active?</label>
+<div class="row">
+    <label>Preferred Shift</label>
+    <div>
+        <input type="checkbox"> Regular
+        <input type="checkbox" checked> Grave Yard
+    </div>
+</div>
+
+<div class="row">
+    <label>Active?</label>
+    <input type="checkbox" checked>
+</div>
+<div class="row captcha">
+    <label>Are You Human?</label>
+    <div>
+        <div class="captcha-text">TIDAWO</div>
+        <small>Click to change</small>
+        <input type="text">
+    </div>
+</div>
+
 
 <div class="actions">
-    <button type="reset">Cancel</button>
-    <button type="submit">Submit</button>
+    <button>Submit</button>
+    <button>Cancel</button>
 </div>
 
-<p class="small">* Đây chỉ là mẫu form. Thay đổi action để gửi dữ liệu lên server.</p>
-</form>
 </div>
 
 </body>
