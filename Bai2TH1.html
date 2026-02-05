@@ -1,1 +1,214 @@
-Bai2TH
+<!--
+1. bố cục tổng thể
+- dạng lưới (grid)
+- 3 cột × 2 hàng
+- mỗi ô là một thẻ khóa học
+
+2. các khu vực chính
+- tiêu đề trang: “khóa học sắp khai giảng”
+- khu vực danh sách khóa học
+
+3. cấu trúc một thẻ khóa học
+- ảnh đại diện khóa học
+- tiêu đề khóa học
+- mô tả ngắn
+- danh sách thông tin:
+  + ưu đãi (nếu có)
+  + khai giảng
+  + học phí
+  + thời lượng
+
+4. các phần tử html tương ứng
+- container chính: div
+- tiêu đề: h2
+- thẻ khóa học: div.card
+- ảnh: img
+- tên khóa học: h3
+- mô tả: p
+- thông tin chi tiết: ul > li
+- icon: i hoặc img
+
+5. css cần dùng
+- grid hoặc flexbox
+- border, padding, margin
+- font-size, font-weight
+- responsive (media query)
+-->
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>khóa học sắp khai giảng</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background:#f0f0f0;
+    padding: 20px;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border: 3px solid #005580;
+}
+.container h2{
+    text-transform: uppercase;
+    border-left: 8px solid #d32f2f;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #d32f2f;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.card{
+    border: 1px solid #ddd;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+}
+.card:hover{
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+.card-content{
+    padding: 15px;
+}
+.card h3{
+    font-size: 15px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+.card p{
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+.card ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+}
+.card ul li{
+    margin-bottom: 6px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+.card ul li i{
+    color: #d32f2f;
+    margin-right: 8px;
+    font-size: 12px;
+    width: 14px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>khóa học sắp khai giảng</h2>
+
+    <div class="grid">
+        <div class="card">
+            <img src="anh/img1.jpg" alt="Lập trình viên quốc tế">
+            <div class="card-content">
+                <h3>lập trình viên quốc tế</h3>
+                <p>chương trình đào tạo chuẩn quốc tế và toàn diện. Phủ hợp với học sinh từ cấp THPT đến hết đại học.</p>
+                <ul>
+                    <li><i class="fas fa-medal"></i>Học bổng 15.000.000 VNĐ</li>
+                    <li><i class="fas fa-calendar"></i>Khai giảng: 2/2024</li>
+                    <li><i class="fas fa-hourglass-half"></i>Thời lượng: 2-2.5 năm</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="anh/img2.jpg" alt="Lập trình web fullstack">
+            <div class="card-content">
+                <h3>lập trình web fullstack</h3>
+                <p>khóa học phủ hợp với người bắt đầu lập trình. Tìm hiểu frontend đến backend, xây dựng website hoàn chỉnh.</p>
+                <ul>
+                    <li><i class="fas fa-gift"></i>Ưu đãi giảm 15% học phí</li>
+                    <li><i class="fas fa-calendar"></i>Khai giảng: 2/2024</li>
+                    <li><i class="fas fa-hourglass-half"></i>Thời lượng: 6 tháng</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="anh/img3.jpg" alt="Lập trình java fullstack">
+            <div class="card-content">
+                <h3>lập trình java fullstack</h3>
+                <p>phát triển ứng dụng web từ cơ bản nâng cao bằng Java, các công nghệ sử dụng J2EE, Servlet, JSP, Spring Framework.</p>
+                <ul>
+                    <li><i class="fas fa-gift"></i>Ưu đãi giảm 15% học phí</li>
+                    <li><i class="fas fa-calendar"></i>Khai giảng: 2/2024</li>
+                    <li><i class="fas fa-hourglass-half"></i>Thời lượng: 236 giờ</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="anh/img4.jpg" alt="Lập trình PHP & Laravel">
+            <div class="card-content">
+                <h3>lập trình php & laravel</h3>
+                <p>PHP là một trong các ngôn ngữ lập trình web tốt nhất. Khóa học hướng lý thuyết xây dựng web hoàn chỉnh sử dụng PHP kết hợp Laravel Framework.</p>
+                <ul>
+                    <li><i class="fas fa-calendar"></i>Khai giảng: 5/2024</li>
+                    <li><i class="fas fa-money-bill-wave"></i>Học phí 9.600.000 VNĐ</li>
+                    <li><i class="fas fa-hourglass-half"></i>Thời lượng: 36 giờ</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="anh/img5.jpg" alt="Khóa học lập trình .NET">
+            <div class="card-content">
+                <h3>khóa học lập trình .net</h3>
+                <p>Phát triển ứng dụng web sử dụng web ASP.NET Core MVC. Để học tốt khóa học vì cần hiểu biết C# cơ bản.</p>
+                <ul>
+                    <li><i class="fas fa-calendar"></i>Khai giảng: 2/2024</li>
+                    <li><i class="fas fa-money-bill-wave"></i>Học phí: 6.000.000 VNĐ</li>
+                    <li><i class="fas fa-hourglass-half"></i>Thời lượng: 40 giờ</li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="card">
+            <img src="anh/img6.jpg" alt="Lập trình SQL Server">
+            <div class="card-content">
+                <h3>lập trình sql server</h3>
+                <p>Trạng bị những kiến thức nền tảng về SQL Server như cách ký tuật, lộc dữ liệu, phân tích để và quản trị cơ sở dữ liệu.</p>
+                <ul>
+                    <li><i class="fas fa-calendar"></i>Khai giảng: 2/2024</li>
+                    <li><i class="fas fa-money-bill-wave"></i>Học phí 4.500.000 VNĐ</li>
+                    <li><i class="fas fa-hourglass-half"></i>Thời lượng: 30 giờ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
