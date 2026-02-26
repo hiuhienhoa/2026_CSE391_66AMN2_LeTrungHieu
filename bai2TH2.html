@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<title>travel landing page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:arial, sans-serif;
+}
+
+body{
+    background:#3d0f3d;
+}
+
+header{
+    height:500px;
+    background:url("ocean.jpg") no-repeat center/cover;
+    position:relative;
+    margin:0 20px;
+    border:4px solid rgb(168, 119, 143);   
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 12px;
+    border:4px solid orange; 
+    margin:-3px;  
+}
+
+.logo{
+    font-family: 'Pacifico', cursive;
+    color:#ffd60a;
+    font-size:28px;
+}
+
+.menu{
+    border:3px solid #ffd60a;   
+    padding:12px 12px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#ffd60a;
+    margin:0 5px;
+}
+
+.hero{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    background:rgba(0,0,0,0.6);
+    padding:30px 50px;
+    text-align:center;
+    color:white;
+}
+
+.hero button{
+    margin-top:15px;
+    padding:8px 15px;
+    border:none;
+    background:#ffd60a;
+    cursor:pointer;
+}
+
+main h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+}
+
+.card{
+    width:300px;
+    background:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+}
+
+.card p{
+    padding:10px 0;
+    font-size:14px;
+}
+
+
+footer img{
+    width:30px;
+    margin:0 15px;
+}
+main{
+    background:#cde6e8;
+    padding:40px 80px;
+    border:4px solid rgb(168, 119, 143);   
+    margin:0 20px;            
+}
+footer{
+    background:#111;
+    text-align:center;
+    padding:20px;
+    border:4px solid orange; 
+    margin:0 20px 20px 20px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    
+    <nav>
+        <div class="logo">TRAVEL GOALS</div>
+        <div class="menu">
+            <a href="#">Destinations</a>
+            <a href="#">About</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>JOE'S TRAVEL PAGE</h1>
+        <p>LET'S EXPLORE THE WORLD TOGETHER</p>
+        <button>Discover places</button>
+    </div>
+</header>
+
+<main>
+    <h2>HIGHLIGHTS</h2>
+
+    <div class="cards">
+        <div class="card">
+            <img src="miami.jpg">
+            <p>MIAMI USA</p>
+        </div>
+
+        <div class="card">
+            <img src="munich.jpg">
+            <p>MUNICH GERMANY</p>
+        </div>
+
+        <div class="card">
+            <img src="barcelona.jpg">
+            <p>BARCELONA SPAIN</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <img src="instagram.png">
+    <img src="facebook.png">
+</footer>
+
+</body>
+</html>
