@@ -384,9 +384,9 @@ Xin chào, !
 >
 > Em hãy:
 > - Tự mô tả DOM bằng lời của em:
->   ................................................................
+>   là mô hình biểu diễn web dưới dạng cây và các nút.các thuộc tính trở thành một nút trong cây. javascript có thể truy cập và thay đổi các nút này để chỉnh sửa web
 > - Nêu 1 ví dụ “thao tác DOM” trong bài (ghi lại 1 dòng lệnh cụ thể).
-
+document.body.style.backgroundColor = "red";
 ---
 
 #### Bước 5: Ảnh kết quả
