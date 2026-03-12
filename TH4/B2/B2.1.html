@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi"> <!-- đã chỉnh sửa dựa trên btvn 1 -->
+<head>
+<meta charset="UTF-8">
+<title>Form đăng ký</title>
+<link rel="stylesheet" href="cssb2.1.css">
+</head>
+
+<body>
+
+<h2>Đăng ký tài khoản</h2>
+
+<form id="formDangKy">
+
+<label>Họ và tên</label>
+<input type="text" id="fullname" maxlength="50">
+<div id="nameCount">0/50</div>
+<div class="error" id="fullname-error"></div>
+
+<label>Email</label>
+<input type="text" id="email">
+<div class="error" id="email-error"></div>
+
+<label>Số điện thoại</label>
+<input type="text" id="phone">
+<div class="error" id="phone-error"></div>
+
+<label>Mật khẩu</label>
+<div class="password-box">
+<input type="password" id="password">
+<button type="button" id="togglePass">👁</button>
+</div>
+
+<div id="strengthBar">
+<div id="strength"></div>
+</div>
+
+<div id="strengthText"></div>
+<div class="error" id="password-error"></div>
+
+<label>Xác nhận mật khẩu</label>
+<input type="password" id="confirm">
+<div class="error" id="confirm-error"></div>
+
+<label>Giới tính</label>
+
+<div class="gender-group">
+<label><input type="radio" name="gender" value="Nam"> Nam</label>
+<label><input type="radio" name="gender" value="Nu"> Nữ</label>
+</div>
+<div class="error" id="gender-error"></div>
+
+<label>
+<input type="checkbox" id="terms">
+Tôi đồng ý với điều khoản
+</label>
+<div class="error" id="terms-error"></div>
+
+<button type="submit">Đăng ký</button>
+
+</form>
+
+<div id="success"></div>
+
+<script src="jsb2.1.js"></script>
+
+</body>
+</html>

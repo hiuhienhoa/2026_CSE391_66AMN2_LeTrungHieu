@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Bảng điểm sinh viên</title>
+<link rel="stylesheet" href="cssb1.css">
+</head>
+
+<body>
+
+<h3>Bảng điểm sinh viên</h3>
+
+<label>Họ tên:</label>
+<input type="text" id="hoten">
+
+<label>Điểm:</label>
+<input type="text" id="diem">
+
+<button id="btnThem">Thêm</button>
+
+<br><br>
+
+<input type="text" id="timkiem" placeholder="Tìm kiếm theo tên">
+
+<select id="locXeploai">
+<option value="tatca">Tất cả</option>
+<option value="Gioi">Giỏi</option>
+<option value="Kha">Khá</option>
+<option value="Trung binh">Trung bình</option>
+<option value="Yeu">Yếu</option>
+</select>
+
+<table>
+<thead>
+<tr>
+<th>STT</th>
+<th>Họ tên</th>
+<th id="cotDiem" style="cursor:pointer">Điểm</th>
+<th>Xếp loại</th>
+<th>Thao tác</th>
+</tr>
+</thead>
+
+<tbody id="tbodySinhVien"></tbody>
+</table>
+
+<p id="thongke">Tổng SV: 0 | Điểm TB: 0</p>
+
+<script src="jsb1.js"></script>
+
+</body>
+</html>

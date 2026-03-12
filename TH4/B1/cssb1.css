@@ -1,0 +1,19 @@
+table{
+border-collapse: collapse;
+width:600px;
+margin-top:10px;
+}
+
+th,td{
+border:1px solid black;
+padding:6px;
+text-align:center;
+}
+
+.yeu{
+background-color:yellow;
+}
+
+#timkiem{
+margin-top:10px;
+}
